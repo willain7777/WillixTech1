@@ -1,0 +1,158 @@
+/* Willix Flow V5: original brand, coherent flowing hero, softened section seams.
+   Motion implemented in CSS / SVG / native browser APIs so no external CDN is required. */
+:root{--flow-blue:#087cff;--flow-cyan:#7dd5ff;--flow-night:#050911;--flow-light:#fbfbfa}
+html{scroll-padding-top:110px}
+/* Brand: preserve official original asset, use a neutral integrated glass support to ensure contrast. */
+.nav-shell{background:linear-gradient(145deg,rgba(10,17,30,.96),rgba(11,23,41,.94));border:1px solid #498ef14c;box-shadow:0 16px 54px #0009,0 1px 28px #0b6cff20,inset 0 1px #a7d5ff13}
+.nav-brand.brand-v5{gap:10px}
+.nav-brand.brand-v5 .nav-official{position:relative;background:linear-gradient(137deg,#fff 0%,#e6f1ff 64%,#d8e8fc 100%);border:1px solid #a9d1ffb8;border-radius:12px;box-shadow:inset 0 1px #fff,0 0 0 3px #257fff14,0 0 24px #2e8dff2a}
+.nav-brand.brand-v5 .nav-official:after{content:"";position:absolute;inset:-4px;border:1px solid #2d88ff29;border-radius:15px;pointer-events:none}
+.nav-brand.brand-v5 .nav-official img{display:block;max-height:100%;object-fit:contain;filter:none!important;mix-blend-mode:normal}
+.nav-brand.brand-v5 .nav-word{border-left:0;padding-left:0}
+.nav-brand.brand-v5 .nav-word b{font-weight:800;letter-spacing:.19em;color:#9acfff;text-shadow:0 0 12px #087cff45}
+/* Hero visual hierarchy */
+.hero.hero-v5{background:radial-gradient(ellipse 43% 37% at 50% 71%,#0952a04a 0%,transparent 80%),radial-gradient(ellipse 67% 41% at 50% 0%,#15223a 0%,transparent 75%),#050810;}
+.hero.hero-v5 .hero-content{max-width:1000px}
+.hero.hero-v5 h1{font-weight:600;letter-spacing:-.069em;text-shadow:0 8px 34px #0006,0 0 36px #428dff0e}
+.hero.hero-v5 h1 span{background:linear-gradient(103deg,#fff 3%,#eaf3ff 47%,#9ecbff 100%);color:transparent;background-clip:text;-webkit-background-clip:text}
+.hero.hero-v5 .capsule{color:#a8d0ff;border-color:#548de651;box-shadow:0 0 15px #117cff1a,inset 0 0 14px #0f59aa0e}
+.hero.hero-v5 .hero-beam{filter:blur(19px);opacity:.75}
+.hero.hero-v5 .hero-grid{opacity:.88;background-image:linear-gradient(#246eaf13 1px,transparent 1px),linear-gradient(90deg,#246eaf13 1px,transparent 1px);mask-image:linear-gradient(#0009,transparent 88%)}
+.hero.hero-v5:before{background:radial-gradient(ellipse,#0e7eff38,transparent 72%);opacity:.72}
+/* Energy flows: resting wires + focused cyan pulse and glowing marks. */
+.circuit-scene.circuit-v5{z-index:3;filter:drop-shadow(0 0 11px #137dff40)}
+.circuit-v5 .circuit-svg{filter:drop-shadow(0 0 6px #0c7bff45);opacity:1}
+.circuit-v5 .v5-wire-accent{filter:drop-shadow(0 0 4px #1f8cff) drop-shadow(0 0 10px #086cff85)}
+.circuit-v5 .circuit-energy-dot{filter:drop-shadow(0 0 5px #c8ecff) drop-shadow(0 0 12px #248dff)}
+.circuit-v5 .circuit-spark{filter:drop-shadow(0 0 7px #0d8aff) drop-shadow(0 0 15px #116bff);stroke-dasharray:22 1990}
+.circuit-v5 .c-node-v5{width:58px;height:58px;border:1px solid #4f9bfa99;border-radius:17px;color:#84ceff;background:radial-gradient(circle at 34% 15%,#203d61,#0a1a32 68%,#07101d);box-shadow:inset 0 1px #cce9ff26,0 0 0 3px #0b67cf16,0 0 22px #116fff4e,0 14px 27px #000a;transition:transform .4s ease,box-shadow .4s ease,color .4s ease}
+.circuit-v5 .c-node-v5 svg{filter:drop-shadow(0 0 9px #3aa9ff88)}
+.circuit-v5 .c-node-v5:after{content:attr(data-flow-label);position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);white-space:nowrap;pointer-events:none;font:700 9px/1.2 'DM Sans',sans-serif;letter-spacing:.055em;text-shadow:0 0 12px #005ee4;color:#85a9d6}
+.circuit-v5 .c-node-v5:hover{transform:translateY(-4px) scale(1.04);box-shadow:inset 0 1px #cce9ff31,0 0 0 4px #237fff17,0 0 32px #1a89ff8a}
+.circuit-v5 .c-node.n2{left:19%;top:58%}.circuit-v5 .c-node.n3{left:1.5%;top:45%}.circuit-v5 .c-node.n7{left:12%;top:78%}
+.circuit-v5 .c-node.n4{right:8%;top:11%}.circuit-v5 .c-node.n5{right:1.5%;top:46%}.circuit-v5 .c-node.n6{right:16%;top:69%}
+/* Brand core is a connection hub, not a floating white sticker. */
+.circuit-v5 .flow-core-v5{z-index:9;width:181px;height:145px;border-radius:28px;padding:16px 15px;background:linear-gradient(148deg,#1e416b,#0b1b31 62%,#06101d);border:1px solid #66b7ff9b;box-shadow:0 0 0 8px #0b65df10,0 0 0 19px #0c55d905,0 0 46px #117dff8a,0 16px 40px #000c,inset 0 1px #d3ecff45;isolation:isolate}
+.circuit-v5 .flow-core-v5 .core-logo-plate{position:relative;z-index:2;width:151px;min-height:61px;padding:9px 11px;border-radius:13px;background:linear-gradient(133deg,#f9fcff,#e1edfa);box-shadow:0 2px 18px #071b3766,inset 0 0 0 1px #c7e1ff}
+.circuit-v5 .flow-core-v5 .core-logo-plate img{width:100%;height:auto;display:block;object-fit:contain;filter:none}
+.circuit-v5 .flow-core-v5 .core-product-name{position:relative;z-index:2;margin-top:12px;font-size:12px;font-weight:800;letter-spacing:.4em;color:#b9ddff;text-shadow:0 0 12px #45a4ff77}
+.circuit-v5 .flow-core-ring{position:absolute;inset:-17px;border-radius:38px;border:1px solid #117dfc55;box-shadow:inset 0 0 23px #136aff22,0 0 34px #005bff38;pointer-events:none;animation:flow-core-pulse 4s ease-in-out infinite alternate}
+@keyframes flow-core-pulse{to{opacity:.45;transform:scale(1.06);box-shadow:0 0 64px #0c6aff70}}
+.flow-hero-halo{z-index:-1;position:absolute;left:50%;top:62%;width:40%;height:42%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,#157dff40 0,transparent 72%);filter:blur(27px);pointer-events:none}
+.flow-hero-caption{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);white-space:nowrap;display:flex;gap:8px;align-items:center;color:#6692c7;font-size:8px;font-weight:700;letter-spacing:.12em;opacity:.75}
+.flow-hero-caption i{display:block;width:20px;height:1px;background:linear-gradient(90deg,#1762e2,#58bbff);box-shadow:0 0 8px #159aff}
+.hero-bottom{z-index:7}
+/* Section transitions deliberately overlap background tones across 220px rather than hard cuts. */
+main>section{--flow-light-offset:0px;isolation:isolate}
+main>section.flow-seam-section{position:relative}
+.flow-section-seam{position:absolute;z-index:0;pointer-events:none;top:0;left:0;width:100%;height:250px;opacity:.9;transform:translateY(var(--flow-light-offset));mask-image:linear-gradient(#000 0%,#0009 63%,transparent 100%)}
+.intro.bright-section{background:linear-gradient(to bottom,#050810 0px,#283c5b 43px,#b1c8e7 126px,#f1f5fa 210px,#fbfbfa 282px);padding-top:170px}
+.intro>.flow-section-seam{background:radial-gradient(ellipse 48% 90% at 50% 15%,#1681ff5c,transparent 80%)}
+.features.cinematic{background:linear-gradient(to bottom,#fbfbfa 0px,#98b6df 80px,#152641 185px,#06080c 285px);padding-top:185px}
+.features>.flow-section-seam{background:radial-gradient(ellipse 65% 66% at 50% 50%,#1475ff51,transparent 75%)}
+.experience.bright-section{background:linear-gradient(to bottom,#060b14 0px,#3b5784 72px,#c0d2ea 148px,#f9fbff 252px,#fbfbfa 310px);padding-top:175px}
+.experience>.flow-section-seam{background:radial-gradient(ellipse 55% 60% at 50% 29%,#0c71ff4c,transparent 78%)}
+.plans.cinematic{background:linear-gradient(to bottom,#fbfbfa 0px,#9fb9dd 78px,#23344f 166px,#070a12 265px,#070a12 100%);padding-top:182px}
+.plans>.flow-section-seam{background:radial-gradient(ellipse 50% 75% at 50% 27%,#0d7eff42,transparent 80%)}
+.flow-seam-section>.container,.flow-seam-section>.section-heading{position:relative;z-index:2}
+/* Dark-to-dark transitions share an atmosphere instead of opaque blocks */
+.features,.global,.plans,.faq-section,.related{background-blend-mode:normal}
+.global.journey-section-v4{background:radial-gradient(ellipse at 73% 60%,#102c62 0%,transparent 58%),linear-gradient(180deg,#06080c,#080f1e 65%,#070b12)}
+.journey-v5 .journey-step-icon{box-shadow:inset 0 0 0 1px #4b95f257,0 0 12px #2588ff2a}
+.journey-v5 .journey-step.is-active .journey-step-icon{background:#0c3c70;color:#c0e9ff;box-shadow:0 0 21px #127cff45}
+.journey-v5 .journey-orbit-node.is-active{box-shadow:0 0 0 4px #168aff1d,0 0 29px #258fff99}
+/* refined headings/card illumination and accordion */
+.features-heading h2,.section-heading h2{letter-spacing:-.058em;text-wrap:balance}
+.bento-card,.related-grid article,.plan-main,.plan-aside{border-color:#3587e731;transition:border-color .38s ease,box-shadow .38s ease,transform .38s ease}
+.bento-card:hover,.related-grid article:hover{border-color:#468dff8c!important;box-shadow:0 20px 65px #005aff1b,0 0 0 1px #146dff36}
+.faq-list details{border-color:#ffffff1d;transition:border-color .35s ease,background-color .35s ease,box-shadow .35s ease}
+.faq-list details[open]{border-color:#2284ff61;box-shadow:inset 3px 0 #218bff,0 0 21px #005aff16}
+.faq-list details[open] p{animation:flow-faq-unfold .38s cubic-bezier(.18,.72,.2,1) both}
+@keyframes flow-faq-unfold{from{opacity:.12;transform:translateY(-8px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.contact-glow{box-shadow:0 0 105px #0c65ee16}
+.contact-inner h2{text-shadow:0 0 56px #0879ff27}
+@media(max-width:780px){
+  .hero.hero-v5{height:810px;min-height:810px}
+  .circuit-scene.circuit-v5{width:1040px;bottom:18px;height:326px}
+  .circuit-v5 .flow-core-v5{width:156px;height:126px;padding:11px}
+  .circuit-v5 .flow-core-v5 .core-logo-plate{width:131px}
+  .circuit-v5 .c-node-v5{width:48px;height:48px}
+  .circuit-v5 .c-node-v5:after{font-size:7px}
+  .intro.bright-section{padding-top:145px}
+  .features.cinematic,.plans.cinematic{padding-top:154px}
+  .experience.bright-section{padding-top:150px}
+}
+@media(max-width:560px){
+ .nav-brand.brand-v5 .nav-official{height:37px;min-width:119px;padding:5px 7px}
+ .nav-brand.brand-v5 .nav-official img{width:105px}
+ .hero.hero-v5{height:802px;min-height:802px}
+ .hero.hero-v5 .hero-content{padding-inline:16px}
+ .hero.hero-v5 h1{font-size:clamp(37px,10.4vw,46px);line-height:1.1}
+ .hero.hero-v5 .capsule{font-size:8px}
+ .circuit-scene.circuit-v5{width:890px;height:294px;bottom:18px}
+ .circuit-v5 .c-node-v5{width:41px;height:41px;border-radius:12px}
+ .circuit-v5 .c-node-v5 svg{width:20px;height:20px}
+ .circuit-v5 .c-node-v5:after{font-size:7px;top:calc(100% + 7px)}
+ .circuit-v5 .flow-core-v5{width:133px;height:108px;padding:8px;border-radius:21px}
+ .circuit-v5 .flow-core-v5 .core-logo-plate{width:110px;min-height:0;padding:6px}
+ .circuit-v5 .flow-core-v5 .core-product-name{margin-top:8px;font-size:10px}
+ .circuit-v5 .flow-core-ring{inset:-9px;border-radius:27px}
+ .flow-hero-caption{display:none}
+ .hero-bottom{bottom:8px}
+ .intro.bright-section,.experience.bright-section{padding-top:145px}
+ .features.cinematic,.plans.cinematic{padding-top:155px}
+ .flow-section-seam{height:185px}
+}
+@media(prefers-reduced-motion:reduce){
+ .flow-core-ring{animation:none!important;opacity:.55}
+ .circuit-v5 .c-node-v5{transition:none!important}
+ .flow-section-seam{transform:none!important;opacity:.7}
+ .faq-list details[open] p{animation:none!important}
+}
+/* QA pass: keep every flow icon within the visible hero; avoid bottom labels. */
+@media(min-width:781px){
+ .circuit-scene.circuit-v5{width:min(1440px,100vw)!important}
+ .circuit-v5 .c-node.n3{left:3.1%}
+ .circuit-v5 .c-node.n5{right:3.1%}
+ .circuit-v5 .c-node.n7{left:14%;top:75%}
+ .flow-hero-caption{display:none}
+}
+@media(max-width:780px){
+ .circuit-scene.circuit-v5{width:100vw!important;max-width:100vw!important;left:50%;height:330px!important;bottom:22px!important}
+ .circuit-v5 .c-node.n1{left:5%;top:3%}
+ .circuit-v5 .c-node.n4{right:5%;top:3%}
+ .circuit-v5 .c-node.n3{left:4%;top:40%}
+ .circuit-v5 .c-node.n7{right:4%;left:auto;top:40%}
+ .circuit-v5 .c-node.n2{left:5%;top:75%}
+ .circuit-v5 .c-node.n5,.circuit-v5 .c-node.n6{display:none}
+ .circuit-v5 .flow-core-v5{top:46%;left:50%;transform:translate(-50%,-4%)}
+ .flow-hero-caption{display:none}
+ .hero-bottom > span:not(.scroll-indicator){display:none!important}
+ .hero-bottom .scroll-indicator{margin-inline:auto}
+ .hero-bottom .intro-replay{position:absolute;right:0;bottom:-1px}
+}
+@media(max-width:560px){
+ .circuit-scene.circuit-v5{height:303px!important;bottom:31px!important}
+ .circuit-v5 .flow-core-v5{top:42%;transform:translate(-50%,0)}
+ .circuit-v5 .c-node.n1,.circuit-v5 .c-node.n4{top:5%}
+ .circuit-v5 .c-node.n3,.circuit-v5 .c-node.n7{top:45%}
+ .circuit-v5 .c-node.n2{top:77%}
+ .hero-bottom{bottom:5px}
+ .hero-bottom .intro-replay{font-size:7px;bottom:0;right:0}
+ .hero-bottom .scroll-indicator{font-size:8px}
+}
+
+
+/* V3.1 clean brand mode: no white background behind the logo. */
+.nav-brand.brand-v5{gap:12px}
+.nav-brand.brand-v5 .nav-official{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;min-width:0!important}
+.nav-brand.brand-v5 .nav-official img{width:36px!important;filter:drop-shadow(0 0 10px rgba(13,138,255,.38))}
+.nav-brand.brand-v5 .nav-word{display:flex;flex-direction:column;gap:2px;border-left:0!important;padding-left:0!important}
+.nav-brand.brand-v5 .nav-word strong{font-size:20px;font-weight:800;letter-spacing:-.045em;color:#f6f9ff;text-shadow:0 0 16px rgba(12,113,255,.12)}
+.nav-brand.brand-v5 .nav-word b{font-size:10px;font-weight:800;letter-spacing:.24em;color:#9acfff;text-shadow:0 0 12px #087cff45}
+.circuit-v5 .flow-core-v5 .core-logo-plate{display:flex;align-items:center;justify-content:center;width:74px;min-height:74px;padding:0;border-radius:22px;background:radial-gradient(circle at 50% 40%,rgba(21,125,255,.2),rgba(4,18,36,.08) 66%,transparent 100%);box-shadow:none!important}
+.circuit-v5 .flow-core-v5 .core-logo-plate img{width:68px;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 0 18px rgba(19,125,255,.42))}
+.circuit-v5 .flow-core-v5 .core-product-name{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;margin-top:10px;letter-spacing:0}
+.circuit-v5 .flow-core-v5 .core-product-name span{font-size:12px;font-weight:800;letter-spacing:-.03em;color:#f5f8ff}
+.circuit-v5 .flow-core-v5 .core-product-name strong{font-size:10px;font-weight:800;letter-spacing:.34em;color:#b9ddff;text-shadow:0 0 12px #45a4ff77}
+@media(max-width:780px){.nav-brand.brand-v5 .nav-official img{width:31px!important}.nav-brand.brand-v5 .nav-word strong{font-size:18px}.nav-brand.brand-v5 .nav-word b{font-size:9px}.circuit-v5 .flow-core-v5 .core-logo-plate{width:62px;min-height:62px}.circuit-v5 .flow-core-v5 .core-logo-plate img{width:56px}.circuit-v5 .flow-core-v5 .core-product-name span{font-size:11px}.circuit-v5 .flow-core-v5 .core-product-name strong{font-size:9px}}

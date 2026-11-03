@@ -1,0 +1,86 @@
+/* Willix Tech — restrained motion system & fullscreen brand premiere. Native CSS, no dependencies. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1);--willix-blue:#1263f1;--willix-glow:#49b8ff}
+html{scroll-padding-top:102px;overflow-x:clip}
+body{overflow-x:clip;background:#050810}
+/* Never keep the content invisible if JS or IntersectionObserver fails. */
+[data-reveal],[data-reveal]:not(.revealed),.portfolio-projects [data-reveal]:not(.revealed){opacity:1;transform:none}
+html.motion-ready [data-reveal]:not(.revealed){opacity:0;transform:translate3d(0,22px,0)}
+html.motion-ready [data-reveal]{transition:opacity 760ms var(--motion-ease),transform 780ms var(--motion-ease);transition-delay:var(--reveal-delay,0ms);will-change:auto}
+html.motion-ready [data-reveal].revealed{opacity:1;transform:translate3d(0,0,0)}
+html.motion-ready .project-card[data-reveal].revealed:hover{transform:translate3d(0,-4px,0)}
+/* Full-bleed opening: absolutely no window, frame, border or brand overlay. */
+.brand-intro,.brand-intro[hidden]{margin:0;padding:0;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
+.brand-intro{position:fixed;inset:0;z-index:2000;width:100vw;width:100dvw;height:100vh;height:100dvh;display:block;background:#000;overflow:hidden;opacity:1;visibility:visible;transition:opacity 700ms ease,visibility 700ms ease}
+.brand-intro[hidden]{display:none!important}
+.brand-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+.brand-intro video{display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:center center;background:#000;border:0;border-radius:0;box-shadow:none;transform:none}
+.brand-intro-controls{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(16px,3.2vw,32px);padding-bottom:max(18px,env(safe-area-inset-bottom));pointer-events:none}
+.brand-intro-controls button{pointer-events:auto}
+.intro-control-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:11px 17px;border:1px solid rgba(173,193,219,.34);border-radius:999px;background:rgba(7,13,22,.78);color:#f4f8ff;backdrop-filter:blur(10px);font-size:12px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:background 200ms ease,border-color 200ms ease,transform 200ms ease}
+.intro-control-button:hover{transform:translateY(-2px);border-color:#65b4ff;background:rgba(9,31,57,.9)}
+.intro-control-button:focus-visible{outline:3px solid #6abfff;outline-offset:3px}
+.intro-skip{margin-left:auto}
+body.intro-open{overflow:hidden}
+/* Hero: the H1 always remains immediately legible. Only secondary elements enter. */
+.hero-portfolio .hero-content{opacity:1!important;transform:none!important}
+.hero-portfolio h1{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
+body.hero-entry-pending .hero-portfolio .hero-content>p,
+body.hero-entry-pending .hero-portfolio .hero-content .cta-pair,
+body.hero-entry-pending .hero-portfolio .hero-qualities,
+body.hero-entry-pending .hero-portfolio .watch-intro,
+body.hero-entry-pending .hero-portfolio .hero-feature{opacity:0;transform:translate3d(0,20px,0)}
+.hero-portfolio .hero-content>p,.hero-portfolio .hero-content .cta-pair,.hero-portfolio .hero-qualities,.hero-portfolio .watch-intro,.hero-portfolio .hero-feature{transition:opacity 750ms var(--motion-ease),transform 760ms var(--motion-ease)}
+.hero-portfolio .hero-content>p{transition-delay:60ms}
+.hero-portfolio .hero-content .cta-pair{transition-delay:135ms}
+.hero-portfolio .hero-qualities{transition-delay:205ms}
+.hero-portfolio .watch-intro{transition-delay:260ms}
+.hero-portfolio .hero-feature{transition-delay:180ms}
+/* Ambient layers are purposely subtle and independent from the click targets. */
+.hero-portfolio{background-image:radial-gradient(ellipse at 76% 30%,rgba(19,92,201,.11),transparent 52%),radial-gradient(ellipse at 16% 67%,rgba(20,62,130,.07),transparent 44%)}
+.hero-orbit{animation:willix-orbit-float 8.5s ease-in-out infinite!important;filter:drop-shadow(0 0 26px rgba(8,101,220,.31))}
+.hero-orbit:after{animation:willix-orbit-light 7.4s ease-in-out infinite}
+@keyframes willix-orbit-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-6px,0)}}
+@keyframes willix-orbit-light{0%,100%{opacity:.77}50%{opacity:.95}}
+/* Keep real WebGL globe unchanged: rotates on its own axis inside the canvas. */
+.globe-shell,.journey-orbit-frame{isolation:isolate}
+.globe-shell .willix-webgl{filter:drop-shadow(0 0 9px rgba(27,117,244,.22))}
+/* Consistent 180–250ms microinteractions. */
+.btn,.nav-action,.watch-intro,.project-link,.project-outbound,.journey-next,.demo-continue,.whatsapp-float{transition:transform 210ms ease,box-shadow 210ms ease,background-color 210ms ease,border-color 210ms ease,color 210ms ease}
+@media(hover:hover) and (pointer:fine){
+ .btn:hover,.nav-action:hover,.demo-continue:hover,.journey-next:hover{transform:translate3d(0,-2px,0);box-shadow:0 8px 30px rgba(22,107,255,.25)}
+ .project-card:hover{border-color:#8dbcf5;box-shadow:0 20px 48px rgba(5,57,123,.19)}
+ .project-card:hover .project-screenshot{transform:scale(1.03)}
+ .project-link:hover,.project-outbound:hover,.nav-menu a:hover{color:#3e9eff}
+}
+.project-card{transition:transform 230ms ease,border-color 230ms ease,box-shadow 230ms ease}
+.project-screenshot{transition:transform 420ms var(--motion-ease)}
+.nav-menu a,.footer-columns a,.project-outbound{position:relative}
+.nav-menu a::after,.footer-columns a::after,.project-outbound::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right 220ms ease}
+.nav-menu a:hover::after,.nav-menu a:focus-visible::after,.footer-columns a:hover::after,.footer-columns a:focus-visible::after,.project-outbound:hover::after,.project-outbound:focus-visible::after{right:0}
+.nav-shell{transition:top 240ms ease,background 240ms ease,box-shadow 240ms ease,border-color 240ms ease}
+.nav-shell.scrolled{border-color:rgba(73,184,255,.45);background:rgba(7,17,35,.95);box-shadow:0 14px 46px rgba(0,15,40,.7),0 0 0 1px rgba(44,111,237,.12)}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #56a8ff!important;outline-offset:3px!important}
+button:active:not(:disabled),.btn:active{transform:translateY(0)}
+/* Pause ambient animation when away from the relevant section or browser tab. */
+body.tab-hidden .hero-orbit,body.tab-hidden .hero-orbit:after,
+body.tab-hidden .circuit-spark,body.tab-hidden .c-node,
+body.tab-hidden .radar-ring,body.tab-hidden .radar-comet,
+body.tab-hidden .marquee-track,
+main > section:not(.is-on-screen) *:not([data-reveal]),
+.hero-portfolio:not(.is-on-screen) .hero-orbit,
+.hero-portfolio:not(.is-on-screen) .hero-orbit:after,
+.hero-portfolio:not(.is-on-screen) .circuit-spark{animation-play-state:paused!important}
+@media(max-width:780px){
+ .brand-intro-controls{padding:15px 13px max(18px,env(safe-area-inset-bottom))}
+ .intro-control-button{padding:10px 12px;min-height:44px;font-size:11px}
+ .hero-orbit{animation-duration:11s!important}
+ .hero-portfolio .hero-feature{transition-duration:650ms}
+ .project-card:hover,.project-card:focus-within{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ [data-reveal],html.motion-ready [data-reveal],html.motion-ready [data-reveal]:not(.revealed){opacity:1!important;transform:none!important}
+ .hero-portfolio .hero-content>p,.hero-portfolio .hero-content .cta-pair,.hero-portfolio .hero-qualities,.hero-portfolio .watch-intro,.hero-portfolio .hero-feature{opacity:1!important;transform:none!important}
+ .brand-intro.is-leaving{transition:none!important}
+}
